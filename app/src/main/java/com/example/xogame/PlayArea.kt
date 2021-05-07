@@ -192,6 +192,7 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(1,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
+                Toast.makeText(this, "${stateOne.checkListVer()}", Toast.LENGTH_SHORT).show()
             }
             else {
                 binding.secondSquare.setImageResource(R.drawable.o)
@@ -199,6 +200,8 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(1,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
+                Toast.makeText(this, "${stateOne.checkListVer()}", Toast.LENGTH_SHORT).show()
+
 
             }
             binding.secondSquare.isEnabled=false

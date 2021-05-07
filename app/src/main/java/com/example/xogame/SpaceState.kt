@@ -13,7 +13,7 @@ class SpaceState(var position:Int,var whatPlay:String)
         else if (whatPlay=="x")
             listState[position]=2
     }
-    //check if there are is horizontal match
+    //check if there  is horizontal match
      fun checkListHor():Boolean {
         var count=0
         var sum=0
@@ -27,6 +27,25 @@ class SpaceState(var position:Int,var whatPlay:String)
             if (sum==3||sum==6)
                 break
             count+=3
+        }
+
+        return (sum==3||sum==6)
+    }
+    //check if there is vertical match
+     fun checkListVer():Boolean {
+        var count=0
+        var sum=0
+        for (i in 0..2) {
+            sum=0
+            for (j in count .. (count+(2*3)) step 3)
+            {
+                sum+= listState[j]
+
+            }
+            if (sum==3||sum==6)
+                break
+
+            count+=1
         }
 
         return (sum==3||sum==6)
