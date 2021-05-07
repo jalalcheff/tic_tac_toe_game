@@ -177,6 +177,7 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(2,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
+                Toast.makeText(this, "${stateOne.checkListMinorDiagonal()}", Toast.LENGTH_SHORT).show()
 
             }
             binding.thirdSquare.isEnabled=false
@@ -227,6 +228,7 @@ class PlayArea : AppCompatActivity() {
                 stateOne.changeStates()
                 stateOne.printListState()
                 Toast.makeText(this, "${stateOne.checkListHor()}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "${stateOne.checkListMajorDiagonal()}", Toast.LENGTH_SHORT).show()
 
             }
             binding.firstSquare.isEnabled=false

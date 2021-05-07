@@ -50,6 +50,23 @@ class SpaceState(var position:Int,var whatPlay:String)
 
         return (sum==3||sum==6)
     }
+     fun checkListMajorDiagonal():Boolean {
+        var sum=0
+        for (j in listState.indices step 4) {
+            sum += listState[j]
+        }
+
+        return (sum==3||sum==6)
+    }
+     fun checkListMinorDiagonal():Boolean {
+        var sum=0
+        for (j in 2 ..6 step 2) {
+            sum += listState[j]
+        }
+
+        return (sum==3||sum==6)
+    }
+
 
     fun printListState()
     {
