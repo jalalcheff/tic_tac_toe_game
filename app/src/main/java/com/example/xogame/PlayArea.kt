@@ -124,7 +124,7 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(4,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
-                stateOne.checkWinner(1,1,1,1)
+
             }
             else {
                 binding.fifthSquare.setImageResource(R.drawable.o)
@@ -132,7 +132,6 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(4,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
-                stateOne.checkWinner(1,1,1,1)
             }
             binding.fifthSquare.isEnabled=false
         }
@@ -170,7 +169,7 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(2,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
-                stateOne.checkWinner(1,0,0,1)
+
             }
             else {
                 binding.thirdSquare.setImageResource(R.drawable.o)
@@ -178,7 +177,7 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(2,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
-                stateOne.checkWinner(1,0,0,1)
+
             }
             binding.thirdSquare.isEnabled=false
         }
@@ -200,6 +199,7 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(1,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
+
             }
             binding.secondSquare.isEnabled=false
         }
@@ -214,7 +214,8 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(0,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
-                stateOne.checkWinner(0,0,1,1)
+               Toast.makeText(this, "${stateOne.checkListHor()}", Toast.LENGTH_SHORT).show()
+
             }
             else {
                 binding.firstSquare.setImageResource(R.drawable.o)
@@ -222,7 +223,8 @@ class PlayArea : AppCompatActivity() {
                 val stateOne=SpaceState(0,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
-                stateOne.checkWinner(0,0,1,1)
+                Toast.makeText(this, "${stateOne.checkListHor()}", Toast.LENGTH_SHORT).show()
+
             }
             binding.firstSquare.isEnabled=false
           
