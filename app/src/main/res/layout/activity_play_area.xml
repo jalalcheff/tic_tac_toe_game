@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".PlayArea">
+
+    <TextView
+        android:id="@+id/turnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="turn of player :"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/playerTurn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playerTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="player 1"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/squaresContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/turnText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/squaresContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/turnText">
+
+        <ImageView
+            android:id="@+id/firstSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toStartOf="@+id/secondSquare"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/secondSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toStartOf="@+id/thirdSquare"
+            app:layout_constraintStart_toEndOf="@+id/firstSquare"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/thirdSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondSquare"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fourthSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toStartOf="@+id/fifthSquare"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstSquare" />
+
+        <ImageView
+            android:id="@+id/fifthSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toStartOf="@+id/sixthSquare"
+            app:layout_constraintStart_toEndOf="@+id/fourthSquare"
+            app:layout_constraintTop_toBottomOf="@+id/firstSquare" />
+
+        <ImageView
+            android:id="@+id/sixthSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fifthSquare"
+            app:layout_constraintTop_toBottomOf="@+id/thirdSquare" />
+
+        <ImageView
+            android:id="@+id/seventhSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toStartOf="@+id/eighthSquare"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthSquare" />
+
+        <ImageView
+            android:id="@+id/eighthSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toStartOf="@+id/ninthSquare"
+            app:layout_constraintStart_toEndOf="@+id/seventhSquare"
+            app:layout_constraintTop_toBottomOf="@+id/fifthSquare" />
+
+        <ImageView
+            android:id="@+id/ninthSquare"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+
+            android:layout_marginTop="8dp"
+            android:background="#DF8D00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eighthSquare"
+            app:layout_constraintTop_toBottomOf="@+id/sixthSquare" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
