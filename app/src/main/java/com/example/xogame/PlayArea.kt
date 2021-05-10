@@ -4,6 +4,7 @@ import android.app.Activity
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.util.Preconditions.checkState
@@ -15,8 +16,10 @@ class PlayArea : AppCompatActivity() {
     lateinit var binding: ActivityPlayAreaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       // binding.playerTurn.text= playerOneName
         binding= ActivityPlayAreaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.playerTurn.text= playerOneName
         firstSquare()
         secondSquare()
         thirdSquare()
@@ -34,26 +37,26 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.ninthSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text = playerOneName
                 val stateOne=SpaceState(8,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal())
                     //if the condition exceed do something
-                {
-                    Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
-
-
-                }
+                    wonLayout(playerTwoName)
             }
+
             else {
                 binding.ninthSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(8,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal())
                     //do something
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
 
             }
             binding.ninthSquare.isEnabled=false
@@ -67,23 +70,27 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.eighthSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text= playerOneName
                 val stateOne=SpaceState(7,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
+                    wonLayout(playerTwoName)
 
 
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
             }
             else {
                 binding.eighthSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(7,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
 
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
             }
             binding.eighthSquare.isEnabled=false
         }
@@ -96,20 +103,24 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.seventhSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text= playerOneName
                 val stateOne=SpaceState(6,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMinorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerTwoName)
             }
             else {
                 binding.seventhSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(6,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMinorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
 
             }
             binding.seventhSquare.isEnabled=false
@@ -122,20 +133,24 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.sixthSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text= playerOneName
                 val stateOne=SpaceState(5,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerTwoName)
             }
             else {
                 binding.sixthSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(5,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
 
             }
             binding.sixthSquare.isEnabled=false
@@ -149,20 +164,24 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.fifthSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text= playerOneName
                 val stateOne=SpaceState(4,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal()||stateOne.checkListMinorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerTwoName)
             }
             else {
                 binding.fifthSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(4,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal()||stateOne.checkListMinorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
 
             }
             binding.fifthSquare.isEnabled=false
@@ -176,22 +195,26 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.fourthSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text= playerOneName
                 val stateOne=SpaceState(3,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerTwoName)
 
 
             }
             else {
                 binding.fourthSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(3,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
 
 
 
@@ -207,11 +230,13 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.thirdSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text = playerOneName
                 val stateOne=SpaceState(2,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMinorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerTwoName)
 
 
 
@@ -219,11 +244,13 @@ class PlayArea : AppCompatActivity() {
             else {
                 binding.thirdSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(2,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMinorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
 
 
             }
@@ -237,20 +264,25 @@ class PlayArea : AppCompatActivity() {
             if (role==1) {
                 binding.secondSquare.setImageResource(R.drawable.x)
                 role = 0
+                binding.playerTurn.text = playerOneName
                 val stateOne=SpaceState(1,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerTwoName)
+
             }
             else {
                 binding.secondSquare.setImageResource(R.drawable.o)
                 role = 1
+                binding.playerTurn.text= playerTwoName
                 val stateOne=SpaceState(1,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+
+                wonLayout(playerOneName)
             }
             binding.secondSquare.isEnabled=false
         }
@@ -261,23 +293,25 @@ class PlayArea : AppCompatActivity() {
 
             if (role==1) {
                 binding.firstSquare.setImageResource(R.drawable.x)
+                binding.playerTurn.text = playerOneName
                 role = 0
                 val stateOne=SpaceState(0,"x")
                 stateOne.changeStates()
                 stateOne.printListState()
                 if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
 
-
+                wonLayout(playerTwoName)
             }
             else {
                 binding.firstSquare.setImageResource(R.drawable.o)
+                binding.playerTurn.text= playerTwoName
                 role = 1
                 val stateOne=SpaceState(0,"o")
                 stateOne.changeStates()
                 stateOne.printListState()
-                if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal())
-                Toast.makeText(this, "true", Toast.LENGTH_SHORT).show()
+                if (stateOne.checkListHor() || stateOne.checkListVer() || stateOne.checkListMajorDiagonal()) {
+                    wonLayout(playerOneName)
+                }
 
 
 
@@ -288,6 +322,15 @@ class PlayArea : AppCompatActivity() {
         }
 
     }
+
+    private fun wonLayout(winnerName:String) {
+        binding.squaresContainer.visibility= View.INVISIBLE
+        binding.playerTurn.visibility=View.INVISIBLE
+        binding.turnText.visibility=View.INVISIBLE
+        binding.wonPlayer.visibility=View.VISIBLE
+        binding.wonPlayer.text="$winnerName wins"
+    }
+
 
 
 

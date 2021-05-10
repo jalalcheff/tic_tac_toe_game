@@ -9,14 +9,15 @@
     >
 
     <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/gameLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/tic_tac_toe_form"
-        app:layout_constraintBottom_toTopOf="@id/gameName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64"
+        app:layout_constraintVertical_bias="0.24000001"
         app:shapeAppearanceOverlay="@style/imageRounded" />
 
     <TextView
@@ -31,12 +32,47 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/gameLogo"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <EditText
+        android:id="@+id/playerOneName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/player_name_entery"
+        android:hint="enter player one name...."
+        android:textColorHint="#5D42A8"
+        android:textColor="#5D42A8"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gameName" />
+
+    <EditText
+        android:id="@+id/playerTwoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/player_name_entery"
+        android:hint="enter player two name...."
+        android:padding="16dp"
+        android:textColor="#5D42A8"
+        android:textColorHint="#5D42A8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerOneName" />
+
 
     <Button
         android:id="@+id/playGameBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#DF8D00"
         android:elevation="16dp"
         android:text="start game"
@@ -44,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gameName"
+        app:layout_constraintTop_toBottomOf="@id/playerTwoName"
         app:layout_constraintVertical_bias="0.07999998"
         tools:ignore="InvalidId" />
 
