@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".PlayArea">
+    tools:context=".PlayArea"
+    android:padding="8dp"
+    >
 
     <TextView
         android:id="@+id/turnText"
@@ -42,8 +44,9 @@
 
         <ImageView
             android:id="@+id/firstSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toStartOf="@+id/secondSquare"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +54,9 @@
 
         <ImageView
             android:id="@+id/secondSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toStartOf="@+id/thirdSquare"
             app:layout_constraintStart_toEndOf="@+id/firstSquare"
@@ -60,8 +64,9 @@
 
         <ImageView
             android:id="@+id/thirdSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/secondSquare"
@@ -69,8 +74,9 @@
 
         <ImageView
             android:id="@+id/fourthSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toStartOf="@+id/fifthSquare"
@@ -79,8 +85,9 @@
 
         <ImageView
             android:id="@+id/fifthSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toStartOf="@+id/sixthSquare"
@@ -89,8 +96,9 @@
 
         <ImageView
             android:id="@+id/sixthSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +107,9 @@
 
         <ImageView
             android:id="@+id/seventhSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toStartOf="@+id/eighthSquare"
@@ -109,8 +118,9 @@
 
         <ImageView
             android:id="@+id/eighthSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toStartOf="@+id/ninthSquare"
@@ -119,9 +129,10 @@
 
         <ImageView
             android:id="@+id/ninthSquare"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
 
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#DF8D00"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +144,7 @@
         android:id="@+id/wonPlayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DF8D00"
+        android:background="@color/background_color"
         android:gravity="center"
         android:textColor="#ffffff"
         android:textSize="42sp"
@@ -142,5 +153,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/wonPlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#DF8D00"
+        android:text="Play Again"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/wonPlayer"
+        app:layout_constraintStart_toStartOf="@id/wonPlayer"
+        app:layout_constraintTop_toBottomOf="@id/wonPlayer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

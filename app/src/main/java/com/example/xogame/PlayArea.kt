@@ -1,6 +1,7 @@
 package com.example.xogame
 
 import android.app.Activity
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,7 +30,18 @@ class PlayArea : AppCompatActivity() {
         seventhSquare()
         eighthSquare()
         ninthSquare()
+        playAgain()
+    }
 
+    private fun playAgain() {
+        binding.wonPlayerButton.setOnClickListener {
+            val playAgainList = SpaceState
+            for (i in 0 until playAgainList.listState.size)
+                playAgainList.listState[i] = Int.MAX_VALUE
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+        }
     }
 
     private fun ninthSquare() {
@@ -328,6 +340,7 @@ class PlayArea : AppCompatActivity() {
         binding.playerTurn.visibility=View.INVISIBLE
         binding.turnText.visibility=View.INVISIBLE
         binding.wonPlayer.visibility=View.VISIBLE
+        binding.wonPlayerButton.visibility=View.VISIBLE
         binding.wonPlayer.text="$winnerName wins"
     }
 
